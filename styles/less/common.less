@@ -1,0 +1,117 @@
+@import "colors.less";
+
+@keyframes slideInFromTop {
+    0% {
+        transform: translateY(-100%);
+    }
+
+    100% {
+        transform: translateY(0);
+    }
+}
+
+html,
+body {
+    height: 100%;
+}
+
+#root {
+    height: 100vh;
+
+    .container {
+        padding: 0 30px;
+
+        &.header {
+            animation: 1s ease-out 0s 1 slideInFromTop;
+            min-height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background-color: @color-gray;
+
+
+
+            #logo {
+                display: inline-block;
+                width: 115px;
+                height: 50px;
+                cursor: pointer;
+
+                img {
+                    max-width: 105px;
+                    width: 100%;
+                    height: 100%;
+                }
+            }
+
+            .user-block {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                position: relative;
+                min-width: 70px;
+
+                #alerts {
+                    display: inline-block;
+                    width: 20px;
+                    height: 20px;
+                    cursor: pointer;
+                    position: relative;
+
+                    img {
+                        width: 100%;
+                        height: 100%;
+                    }
+
+                    .alerts-front {
+                        display: none;
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        z-index: 99;
+                    }
+
+                    &:hover .alerts-front {
+                        display: inline;
+                    }
+                }
+            }
+        }
+
+        &.main {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: -moz-calc(100% - 60px);
+            height: -webkit-calc(100% - 60px);
+            height: calc(100% - 60px);
+
+            .error-block {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+
+                img {
+                    width: 100px;
+                    height: 100px;
+                }
+
+                span {
+                    &.error-code {
+                        font-size: 60px;
+                    }
+
+                    &.error-title {
+                        font-size: 20px;
+                    }
+                }
+            }
+        }
+
+        &.toast-messages {
+            position: absolute;
+            bottom: 0;
+            right: 0;
+        }
+    }
+}

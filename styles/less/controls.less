@@ -1,0 +1,158 @@
+ @import "colors.less";
+
+ #menuToggle {
+     display: block;
+     z-index: 1;
+     user-select: none;
+
+     .circle {
+         display: block;
+         width: 30px;
+         height: 30px;
+         border-radius: 50%;
+         background: rgb(224, 145, 145);
+         z-index: 1;
+
+         &[data-letters]:before {
+             content: attr(data-letters);
+             display: inline-block;
+             content: attr(data-letters);
+             display: flex;
+             align-items: center;
+             justify-content: center;
+             width: 30px;
+             height: 30px;
+             border-radius: 50%;
+             color: white;
+         }
+     }
+
+     input {
+         display: block;
+         margin: 0;
+         width: 30px;
+         height: 30px;
+         position: absolute;
+         cursor: pointer;
+         opacity: 0;
+         z-index: 2;
+
+         &:hover+.circle {
+             background: rgb(236, 57, 57);
+         }
+
+         &:checked~#menu {
+             display: block;
+         }
+     }
+
+     #menu {
+         display: none;
+         position: absolute;
+         width: 150px;
+         margin-left: -150px;
+         box-shadow: 0 0 40px @color-gray;
+         list-style-type: none;
+         padding: 10px 20px;
+         background-color: white;
+
+         .user {
+             display: flex;
+             justify-content: center;
+             margin-bottom: 5px;
+             color: @color-gray;
+             border-bottom: 2px solid @color-gray;
+         }
+
+         a {
+             display: block;
+             text-decoration: none;
+             color: #232323;
+
+             &:hover {
+                 background-color: @color-gray;
+             }
+
+             li {
+                 padding: 5px 0;
+             }
+         }
+     }
+ }
+
+ .toast-messages {
+     .message {
+         max-width: 240px;
+         margin-bottom: 15px;
+
+
+         &.confirmation {
+             .text-block {
+                 background-color: @color-confirmation;
+             }
+
+             .text-block::before {
+                 background-image: url(../images/ok_mark.svg);
+             }
+         }
+
+         &.error {
+             .text-block {
+                 background-color: @color-error;
+             }
+
+             .text-block::before {
+                 background-image: url(../images/exclamation_mark.svg);
+
+             }
+         }
+
+         &.warning {
+             .text-block {
+                 background-color: @color-warning;
+             }
+
+             .text-block::before {
+                 background-image: url(../images/ok_mark.svg);
+
+             }
+         }
+
+         .text-block {
+             display: flex;
+             padding: 15px 10px;
+             align-items: center;
+             border-radius: 15px;
+
+             &::before {
+                 content: "";
+                 height: 30px;
+                 width: 30px;
+                 margin-right: 10px;
+                 background-size: 30px 30px;
+                 background-repeat: no-repeat;
+             }
+
+             .block-content {
+                 display: flex;
+                 flex-direction: column;
+
+                 span {
+                     max-width: 170px;
+                     color: white;
+
+                     &:first-child {
+                         font-weight: 600;
+                     }
+                 }
+
+             }
+
+
+         }
+     }
+
+
+
+
+ }

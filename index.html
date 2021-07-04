@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8" />
+    <title>Binary Studio</title>
+    <link rel="stylesheet" href="styles/reset.css">
+    <link rel="stylesheet" href="styles/colors.css">
+    <link rel="stylesheet" href="styles/common.css">
+    <link rel="stylesheet" href="styles/controls.css">
+</head>
+
+<body>
+    <div id="root">
+        <div class="container header" onload="style='display: none'">
+            <a href="/" id="logo">
+                <img src="images/logo.svg" alt="Logo">
+            </a>
+            <div class="user-block">
+                <a href="/" id="alerts">
+                    <img src="images/notification_white.svg" alt="Alerts">
+                    <img src="images/notification_black.svg" class="alerts-front" alt="Alerts front">
+                </a>
+                <nav role="navigation">
+                    <div id="menuToggle">
+                        <input type="checkbox" />
+                        <span data-letters="O" class="circle"></span>
+                        <ul id="menu">
+                            <div class="user">Olga Pustovoit</div>
+                            <a href="#">
+                                <li>Profile</li>
+                            </a>
+                            <a href="#">
+                                <li>Log Out</li>
+                            </a>
+                        </ul>
+                    </div>
+                </nav>
+            </div>
+        </div>
+        <div class="container main">
+            <div class="error-block">
+                <img src="images/smile_sad.svg" alt="404 error">
+                <span class="error-code">404</span>
+                <span class="error-title">Not Found</span>
+                <span class="error-message">The page you were looking for doesn't exist</span>
+            </div>
+        </div>
+        <div class="container toast-messages">
+            <div class="message error">
+                <div class="text-block">
+                    <div class="block-content">
+                        <span class="block-title">Error</span>
+                        <span class="block-message">Something went wrong. Please try again later</span>
+                    </div>
+                </div>
+            </div>
+            <div class="message confirmation">
+                <div class="text-block">
+                    <div class="block-content">
+                        <span class="block-title">Success</span>
+                        <span class="block-message">Profile was updated</span>
+                    </div>
+                </div>
+            </div>
+            <div class="message warning" style="display: none;">
+                <div class="text-block">
+                    <div class="block-content">
+                        <span class="block-title">Warning</span>
+                        <span class="block-message">Deadline is coming</span>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+</body>
+
+</html>

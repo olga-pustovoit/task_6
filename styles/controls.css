@@ -1,0 +1,115 @@
+#menuToggle {
+  display: block;
+  z-index: 1;
+  user-select: none;
+}
+#menuToggle .circle {
+  display: block;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background: #e09191;
+  z-index: 1;
+}
+#menuToggle .circle[data-letters]:before {
+  display: inline-block;
+  content: attr(data-letters);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  color: white;
+}
+#menuToggle input {
+  display: block;
+  margin: 0;
+  width: 30px;
+  height: 30px;
+  position: absolute;
+  cursor: pointer;
+  opacity: 0;
+  z-index: 2;
+}
+#menuToggle input:hover + .circle {
+  background: #ec3939;
+}
+#menuToggle input:checked ~ #menu {
+  display: block;
+}
+#menuToggle #menu {
+  display: none;
+  position: absolute;
+  width: 150px;
+  margin-left: -150px;
+  box-shadow: 0 0 40px #8080803b;
+  list-style-type: none;
+  padding: 10px 20px;
+  background-color: white;
+}
+#menuToggle #menu .user {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 5px;
+  color: #8080803b;
+  border-bottom: 2px solid #8080803b;
+}
+#menuToggle #menu a {
+  display: block;
+  text-decoration: none;
+  color: #232323;
+}
+#menuToggle #menu a:hover {
+  background-color: #8080803b;
+}
+#menuToggle #menu a li {
+  padding: 5px 0;
+}
+.toast-messages .message {
+  max-width: 240px;
+  margin-bottom: 15px;
+}
+.toast-messages .message.confirmation .text-block {
+  background-color: #349434;
+}
+.toast-messages .message.confirmation .text-block::before {
+  background-image: url(../images/ok_mark.svg);
+}
+.toast-messages .message.error .text-block {
+  background-color: #aa5555;
+}
+.toast-messages .message.error .text-block::before {
+  background-image: url(../images/exclamation_mark.svg);
+}
+.toast-messages .message.warning .text-block {
+  background-color: #ce7d31;
+}
+.toast-messages .message.warning .text-block::before {
+  background-image: url(../images/ok_mark.svg);
+}
+.toast-messages .message .text-block {
+  display: flex;
+  padding: 15px 10px;
+  align-items: center;
+  border-radius: 15px;
+}
+.toast-messages .message .text-block::before {
+  content: "";
+  height: 30px;
+  width: 30px;
+  margin-right: 10px;
+  background-size: 30px 30px;
+  background-repeat: no-repeat;
+}
+.toast-messages .message .text-block .block-content {
+  display: flex;
+  flex-direction: column;
+}
+.toast-messages .message .text-block .block-content span {
+  max-width: 170px;
+  color: white;
+}
+.toast-messages .message .text-block .block-content span:first-child {
+  font-weight: 600;
+}
